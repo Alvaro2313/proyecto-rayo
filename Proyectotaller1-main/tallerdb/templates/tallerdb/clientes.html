@@ -1,0 +1,56 @@
+{% extends "./base.html" %}
+
+{% block title %} Gestión de Cursos {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong class="text-dark">{{ message }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <h2>Gestión de Curso</h2>
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h1>Listado de Clientes</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Rut</th>
+                        <th>Nombre</th>
+                        <th>apellido_paterno</th>
+                        <th>apellido_materno</th>
+                        <th>telefono</th>
+                        <th>email</th>
+                        <th>direccion</th>
+                        <th>activo</th>
+                        <th colspan="2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in clientes %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{c.rut}}</td>
+                        <td>{{c.nombre}}</td>
+                        <td>{{c.apellido_paterno}}</td>
+                        <td>{{c.apellido_materno}}</td>
+                        <td>{{c.telefono}}</td>
+                        <td>{{c.email}}</td>
+                        <td>{{c.direccion}}</td>
+                        <td>{{c.activo}}</td>
+                        <td><a href="edicionCliente/{{c.rut}}"" class="btn btn-info">Editar</a></td>
+                        <td><a href="eliminarCliente/{{c.rut}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

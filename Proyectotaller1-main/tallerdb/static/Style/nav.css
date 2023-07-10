@@ -1,0 +1,141 @@
+/*buscador */
+.css-search {
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    padding: 4px 0px 5px;
+    border: 0px;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+}
+
+.css-est-bus {
+    line-height: 1.4375em;
+    font-size: 0.875rem;
+    font-family: Roboto, sans-serif;
+    color: rgb(40, 40, 40);
+    box-sizing: border-box;
+    cursor: text;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    font-weight: 700;
+    padding: 4px 8px;
+    display: flex;
+    width: 300px;
+    border-radius: 4px;
+    border: 1px solid rgba(45, 42, 42, 0.23);
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+.css-btnbus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #e80000ec;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50%;
+    overflow: visible;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    padding: 5px;
+    font-size: 1.125rem;
+}
+
+.css-btncaja {
+    color: rgb(255, 0, 0);
+    width: 20px;
+    height: 20px;
+}
+
+/*css enlaces */
+
+.ul-enlances {
+    font-family: "Chivo Mono" monospace;
+    align-items: center;
+    z-index: 2;
+    gap: 30px;
+}
+
+.ul-enlances li a {
+    padding: 10px;
+    transition: 0.5s ease;
+}
+
+.ul-enlances li a {
+    padding: 10px;
+    transition: 0.5s ease;
+    color: black;
+}
+
+/*menu perfil*/
+.css-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    vertical-align: middle;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 0.875rem;
+    font-family: Roboto, sans-serif;
+    min-width: 64px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    color: rgb(255, 0, 0);
+}
+
+.css-nav:hover {
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.611);
+    color: rgb(255, 0, 0);
+}
+
+.css-menu-caja {
+    margin: 0px;
+    line-height: 16.41px;
+    font-size: 0.875rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    color: rgb(50, 50, 50);
+    text-align: right;
+}
+
+.css-menu-int {
+    user-select: none;
+    width: 1.2em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+}

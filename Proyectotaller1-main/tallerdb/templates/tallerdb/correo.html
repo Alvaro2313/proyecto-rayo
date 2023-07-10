@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Correos de Ejecutivos</title>
+    <link rel="stylesheet" type="text/css" href='{% static "Style/ferch.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "Style/volver.css"%}'>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light text-bg-dark" >
+    <div class="container-fluid">
+      <img src='{% static "imagen/logotrans.png" %}' class="d-block width=" 100" height="100" alt="1">
+      <a class="navbar-brand" href='{%url 'proyecto' %}'<p style="color: white;">Taller Mecánico Rayo Makween</p></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href='{%url 'formulario' %}' style="color: white;">Formulario de ingreso</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href='{%url 'login' %}' style="color: white;">Iniciar seccion</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false"style="color: white;">
+              Mas
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href='{%url 'equipo' %}' style="color: black;">Equipo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled"></a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" style="color: white;">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody id="data">
+      </tbody>
+    </table>
+    <a href='{%url 'proyecto' %}' class="boton-volver">Volver</a>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <script>
+    let url = 'https://jsonplaceholder.typicode.com/users/';
+      fetch(url)
+          .then( response => response.json() )
+          .then( data => mostrarData(data) )
+          .catch( error => console.log(error) )
+      
+      const mostrarData = (data) => {
+          console.log(data)
+          let body = ""
+          for (var i = 0; i < data.length; i++) {      
+             body+=`<tr><td>${data[i].id}</td><td>${data[i].name}</td><td>${data[i].email}</td></tr>`
+          }
+          document.getElementById('data').innerHTML = body
+          //console.log(body)
+      }</script>
+    <footer class="text-bg-dark text-center pt-3 pb-3">
+        Belalv ©Copyright
+        <span class="mx-2 fs-3"><i class="bi bi-whatsapp"></i></span>
+        <span class="mx-2 fs-3"><i class="bi bi-facebook"></i></span>
+        <span class="mx-2 fs-3"><i class="bi bi-instagram"></i></span>
+        <a class="link" href="https://es-la.facebook.com"><img src='{% static "imagen/logos/face.png" %}' width="50" height="50"></a>
+        <a class="link" href="https://www.instagram.com"><img src='{% static "imagen/logos/insta.png" %}' width="50" height="50"></a>
+        <a class="link" href="https://twitter.com/?lang=es"><img src='{% static "imagen/logos/twitter.png" %}' width="50" height="50"></a>
+        <a class="link" href="https://chat.whatsapp.com/LxEWPMyYEme5xClQJrjFi2"><img src='{% static "imagen/logos/wtspp.png" %}' width="50" height="50"></a>
+        <a class="link" href="https://www.youtube.com/watch?v=7Tu7Xp1kp98"><img src='{% static "imagen/logos/youtube.png" %}' width="50" height="50"></a>
+        <a class="link" href="https://www.youtube.com/watch?v=t4MKxFuyD7Q"></a>
+        <a class="btn btn-primary" href='{%url 'correo' %}'><span class="mx-2 fs-3">CONTACTA A NUESTROS EJECUTIVOS</i></span></a>
+      </footer>
+</body>
+</html>

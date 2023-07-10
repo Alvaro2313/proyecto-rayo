@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>Carga</title>
+  <link rel="stylesheet" type="text/css" href='{% static "Style/carga.css" %}'>
+  <script>window.addEventListener('load', function() {
+    setTimeout(function() {
+      window.location.href = '{%url "proyecto" %}';
+    }, 5000); // Cambia el valor a la cantidad de milisegundos que deseas (5 segundos en este caso)
+  });</script>
+</head>
+<body>
+  <div class="loader">
+    <div class="car">
+      <div class="wheel left"></div>
+      <div class="wheel right"></div>
+    </div>
+  </div>
+</body>
+</html>

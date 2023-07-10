@@ -1,0 +1,46 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Altura del carrusel */
+    overflow: hidden;
+  }
+  
+  .carrusel {
+    display: flex;
+    animation: desplazamiento 15s infinite; /* Controla la velocidad y duración del carrusel */
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .card {
+    width: 18rem;
+    /* Estilos adicionales de la tarjeta */
+  }
+  
+  .imagen {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  @keyframes desplazamiento {
+    0% {
+      transform: translateX(0);
+    }
+    33.33% {
+      transform: translateX(-100%);
+    }
+    66.66% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+  }
